@@ -1,8 +1,8 @@
 import React from "react";
-import Categories from "../../../components/categories/Categories";
+import CategoriesComponent from "../../components/categories/Categories";
 
 function Categories() {
-  return <Categories/>;
+  return <CategoriesComponent />;
 }
 
 export default Categories;

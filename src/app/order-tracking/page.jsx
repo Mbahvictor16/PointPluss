@@ -1,8 +1,8 @@
 import React from "react";
-import OrderTracking from "../../../components/order-tracking/OrderTracking";
+import OrderTrackingComponent from "../../components/order-tracking/OrderTracking";
 
 function OrderTracking() {
-  return <OrderTracking/>;
+  return <OrderTrackingComponent />;
 }
 
 export default OrderTracking;

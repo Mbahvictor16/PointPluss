@@ -1,8 +1,8 @@
 import React from "react";
-import Riders from "../../../components/riders/Riders";
+import RidersComponent from "../../components/riders/Riders";
 
 function Rider() {
-  return <Riders/>;
+  return <RidersComponent />;
 }
 
 export default Rider;

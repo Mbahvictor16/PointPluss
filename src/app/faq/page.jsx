@@ -1,8 +1,8 @@
 import React from "react";
-import FAQ from "../../../components/faq/FAQ";
+import FAQComponent from "../../components/faq/FAQ";
 
 function FAQ() {
-  return <FAQ/>;
+  return <FAQComponent />;
 }
 
 export default FAQ;

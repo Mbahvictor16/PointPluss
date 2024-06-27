@@ -1,8 +1,8 @@
 import React from "react";
-import Map from "../../../components/order-tracking/SubComponents/Map/Map";
+import MapComponent from "../../components/order-tracking/SubComponents/Map/Map";
 
 function Map() {
-  return <Map/>;
+  return <MapComponent />;
 }
 
 export default Map;

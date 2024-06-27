@@ -1,8 +1,8 @@
 import React from "react";
-import Resturants from "../../../components/home/restuarants/Resturants";
+import ResturantsComponent from "@/src/components/home/restuarants/Restaurants";
 
 function Restaurants() {
-  return <Resturants/>;
+  return <ResturantsComponent />;
 }
 
 export default Restaurants;
