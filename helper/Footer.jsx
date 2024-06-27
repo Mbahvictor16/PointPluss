@@ -1,12 +1,10 @@
 import React from "react";
-import { FaFacebookF, FaInstagram, FaPhoneAlt, FaLinkedinIn, FaLocationDot, FaTwitter } from "react-icons/fa";
-import { IoMail } from "react-icons/io5";
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 import Link from "next/link";
 import Point from "./Point";
 import { MdOutlineMailOutline } from "react-icons/md";
 
 const Footer = () => {
-
   return (
     <div className="flex mt-[50px] flex-col w-full h-auto">
       <div className="bg-amber-500 p-[20px] py-[30px] lg:px-[50px] flex justify-center items-center">

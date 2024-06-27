@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 const Dropdown = ({ menuItems, defaultItem, handleSelect }) => {
   // Filter out the selected item from the list of menu items
@@ -11,7 +11,7 @@ const Dropdown = ({ menuItems, defaultItem, handleSelect }) => {
         {/* Render the filtered items */}
         {filteredItems.map((item, index) => (
           <li key={index} onClick={() => handleSelect(item.name)}>
-            <Link className={item.cName} to={item.path}>
+            <Link className={item.cName} href={item.path}>
               {item.name}
             </Link>
           </li>

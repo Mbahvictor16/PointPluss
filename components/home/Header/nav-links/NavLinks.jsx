@@ -1,13 +1,13 @@
+'use client'
+
 import React, { useContext, useRef, useState } from "react";
 import { TiShoppingCart } from "react-icons/ti";
-import { Link } from "react-router-dom";
-import { IoMenuOutline } from "react-icons/io5";
+import Link from "next/link";
 import Point from "../../../../Helper/Point";
 import { RiArrowDownSFill } from "react-icons/ri";
 import Dropdown from "../drop-down/Dropdown";
 import { MenuItems } from "../drop-down/menu-items/MenuItems";
-import Dashboard from "../../dashboard/Dashboard";
-import AvatarContext from "../../../../Api/contexts/AvatarContext";
+import AvatarContext from "../../../../context/AvatarContext";
 import { RxHamburgerMenu } from "react-icons/rx";
 
 export default function NavLinks({ handleOpenModal, handleToggleModal }) {
@@ -48,7 +48,7 @@ export default function NavLinks({ handleOpenModal, handleToggleModal }) {
               <RxHamburgerMenu size={"1.2rem"} />
             </div>
             <div className="w-[50%]cursor-pointer flex justify-center items-center">
-              <Link to={"/"}>
+              <Link href={"/"}>
                 <Point />
               </Link>
             </div>
@@ -75,7 +75,7 @@ export default function NavLinks({ handleOpenModal, handleToggleModal }) {
                 />
               )}
             </div>
-            <Link to={"/orders"} className="cart-icon">
+            <Link href={"/orders"} className="cart-icon">
               <div className="relative w-11 pt-3">
                 <TiShoppingCart size={"2rem"} className="text-amber-500" />
                 <span className="absolute rounded-xl bg-red-600 text-white border num w-4 top-1 right-0 text-sm flex items-center justify-center font-semibold">
@@ -105,7 +105,7 @@ export default function NavLinks({ handleOpenModal, handleToggleModal }) {
                       className="p-1 px-2 hover:bg-amber-500 font-[590] text-black hover:text-white rounded cursor-pointer"
 
                     >
-                      <Link to={"/person"}>
+                      <Link href={"/person"}>
                         Profile
                       </Link>
                     </li>
@@ -114,7 +114,7 @@ export default function NavLinks({ handleOpenModal, handleToggleModal }) {
                       className="p-1 px-2 hover:bg-amber-500 text-black hover:text-white font-[590] rounded cursor-pointer"
 
                     >
-                      <Link to={"/"}>
+                      <Link href={"/"}>
                         Logout
                       </Link>
                     </li>

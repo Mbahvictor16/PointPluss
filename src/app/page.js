@@ -1,9 +1,41 @@
-import Image from "next/image";
+'use client'
 
-export default function Home() {
+import React, { useEffect, useState } from 'react'
+import '../../src/app/globals.css'
+import Footer from '../../helper/Footer'
+import Splash7 from '../../helper/Splash7'
+import Sidebar from '../../helper/Sidebar'
+import { FavoriteProductsProvider } from '../../context/FavoriteProductsContext'
+import HomePage from '../../components/home/HomePage'
+
+export default function Home () {
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const fetchData = () => {
+      setTimeout(() => {
+        setLoading(false)
+      }, 2000)
+    }
+
+    fetchData()
+  }, [])
+
+  if (loading) {
+    return <Splash7 />
+  }
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      
-    </main>
-  );
+    <FavoriteProductsProvider>
+      <div className='app-container'>
+        <div className='flex'>
+          <Sidebar />
+          <div className='Routes overflow-y-scroll ml-0 max-h-[calc(100vh)] w-[100%]'>
+            <HomePage />
+            <Footer />
+          </div>
+        </div>
+      </div>
+    </FavoriteProductsProvider>
+  )
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import { IoClose } from "react-icons/io5";
 import PhoneNumberInput from "../../person/phone-input/PhoneNumberInput";
-import { google } from "../../../Assets";
+import { google } from '../../../public/assets';
 import { MdOutlineMailOutline } from "react-icons/md";
 
 function SmsForm({ onClose, setFormType }) {

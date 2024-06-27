@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useEffect, useRef, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -10,7 +12,7 @@ import Icons from "../Header/Icons";
 import ResturantsDetails from "../restuarants/modal/ResturantsDetails";
 import { IoStorefrontOutline } from "react-icons/io5";
 import { FaArrowRightLong } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import Link from "next/link"; ;
 import { BsFillHeartFill } from "react-icons/bs";
 import { Typewriter } from "react-simple-typewriter";
 import NavLinks from "../Header/nav-links/NavLinks";
@@ -20,13 +22,14 @@ import LoginModal from "../login/LoginModal";
 import Favorites from "./favorite/Favorites";
 import Dashboard from "../dashboard/Dashboard";
 import Products from "../Products";
-import { no_product } from "../../../Assets";
+import { no_product } from "../../../public/assets";
 import RestaurantsCards from "./Cards/RestaurantsCards";
 import ProductsCards from "./Cards/ProductsCards";
-import { useFavoriteProducts } from "../../../Api/contexts/FavoriteProductsContext";
+import { useFavoriteProducts } from "../../../context/FavoriteProductsContext";
 
-const Header = ({ products }) => {
+const Header = () => {
   const [rest] = useState(Resturants);
+  const [products] = useState(Products)
   const [error, setError] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedProduct, setSelectedProduct] = useState(null);

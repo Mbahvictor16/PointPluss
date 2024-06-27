@@ -1,6 +1,8 @@
+'use client'
+
 import React, { useState } from "react";
 import { IoArrowBack, IoClose } from "react-icons/io5";
-import { email } from "../../../Assets";
+import { email } from "../../../public/assets";
 import { MdOutlineMail } from "react-icons/md";
 import { FiEye, FiEyeOff, FiLock } from "react-icons/fi";
 

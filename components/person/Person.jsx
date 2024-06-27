@@ -1,6 +1,8 @@
+'use client'
+
 import React, { useContext, useState } from "react";
 import { FaChevronLeft } from "react-icons/fa";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useRouter } from 'next/navigation';
 import ImageUploadModal from "../person/image-upload/ImageUploadModal";
 import Headers from "../../Helper/Headers";
 import { img_avatar } from "../../Assets";
@@ -11,7 +13,7 @@ import AvatarContext from "../../Api/contexts/AvatarContext";
 import Dashboard from "../../Components/home/dashboard/Dashboard";
 
 const Person = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
   const { avatar, setAvatar } = useContext(AvatarContext);
   const [isUploadModalOpen, setUploadModalOpen] = useState(false);
   const [isPersonalDetailsModalOpen, setIsPersonalDetailsModalOpen] = useState(false);
@@ -42,7 +44,7 @@ const Person = () => {
   };
 
   const handleViewAllClick = () => {
-    navigate("/recentOrders");
+    router.push("/recentOrders");
   };
 
   const handleImageClick = () => {

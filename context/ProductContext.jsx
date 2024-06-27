@@ -1,5 +1,7 @@
+'use client'
+
 import React, { createContext, useState } from "react";
-import Products from "../Components/home/Products";
+import Products from "../components/home/Products";
 
 export const ProductContext = createContext(null);
 

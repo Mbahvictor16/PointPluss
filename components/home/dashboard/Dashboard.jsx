@@ -1,14 +1,13 @@
-import React from "react";
-import { BsCardChecklist } from "react-icons/bs";
-import { FaListUl } from "react-icons/fa";
-import { IoHome } from "react-icons/io5";
-import { LiaClipboardListSolid } from "react-icons/lia";
-import { RiInformationLine } from "react-icons/ri";
-import { TiShoppingCart, TiGroup } from "react-icons/ti";
-import { RiEBike2Line } from "react-icons/ri";
-import { NavLink } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
-import { RxHamburgerMenu } from "react-icons/rx";
+import React from 'react';
+import Link from 'next/link';
+import { BsCardChecklist } from 'react-icons/bs';
+import { FaListUl } from 'react-icons/fa';
+import { IoHome } from 'react-icons/io5';
+import { LiaClipboardListSolid } from 'react-icons/lia';
+import { RiInformationLine, RiEBike2Line } from 'react-icons/ri';
+import { TiShoppingCart, TiGroup } from 'react-icons/ti';
+import { motion, AnimatePresence } from 'framer-motion';
+import { RxHamburgerMenu } from 'react-icons/rx';
 
 const Dashboard = ({ isOpen, onClose }) => {
   return (
@@ -16,9 +15,9 @@ const Dashboard = ({ isOpen, onClose }) => {
       {isOpen && (
         <div className="dashboard-modal">
           <motion.div
-            initial={{ x: "-100%" }}
+            initial={{ x: '-100%' }}
             animate={{ x: 0 }}
-            exit={{ x: "-100%", opacity: 0 }}
+            exit={{ x: '-100%', opacity: 0 }}
             transition={{ duration: 0.5 }}
             className="modalContent flex flex-col gap-[10px] items-center"
           >
@@ -28,104 +27,102 @@ const Dashboard = ({ isOpen, onClose }) => {
                   Point+
                 </h1>
                 <div className="flex items-center p-4 pt-7" onClick={onClose}>
-                  <RxHamburgerMenu size={"1.2rem"} />
+                  <RxHamburgerMenu size={'1.2rem'} />
                 </div>
               </div>
             </div>
             <div className="flex font-[590] flex-col w-full justify-start">
-              <NavLink
-                to={"/"}
-                exact
-                activeClassName="active"
-                onClick={onClose}
-                className="aboutus p-[10px] hover:bg-[#ffa5004c] hover:text-white duration-[0.5s] px-[15px] flex items-center gap-[10px]"
-              >
-                <div className="flex justify-center items-center">
-                  <IoHome />
-                </div>
-                Home
-              </NavLink>
-              <NavLink
-                to={"/faq"}
-                exact
-                activeClassName="active"
-                onClick={onClose}
-                className="aboutus p-[10px] hover:bg-[#ffa5004c] hover:text-white duration-[0.5s] px-[15px] flex items-center gap-[10px]"
-              >
-                <div className="flex justify-center items-center">
-                  <FaListUl />
-                </div>
-                Categories
-              </NavLink>
-              <NavLink
-                to={"/person"}
-                activeClassName="active"
-                onClick={onClose}
-                className="aboutus p-[10px] hover:bg-[#ffa5004c] hover:text-white duration-[0.5s] px-[15px] flex items-center gap-[10px]"
-              >
-                <div className="flex justify-center items-center">
-                  <LiaClipboardListSolid />
-                </div>
-                Order History
-              </NavLink>
-              <NavLink
-                to={"/orders"}
-                activeClassName="active"
-                onClick={onClose}
-                className="aboutus p-[10px] hover:bg-[#ffa5004c] hover:text-white duration-[0.5s] px-[15px] flex items-center gap-[10px]"
-              >
-                <div className="flex justify-center items-center">
-                  <TiShoppingCart />
-                </div>
-                Cart
-              </NavLink>
-              <NavLink
-                to={"/"}
-                activeClassName="active"
-                onClick={onClose}
-                className="aboutus p-[10px] hover:bg-[#ffa5004c] hover:text-white duration-[0.5s] px-[15px] flex items-center gap-[10px]"
-              >
-                <div className="flex justify-center items-center">
-                  <BsCardChecklist />
-                </div>
-                Reviews
-              </NavLink>
-              <NavLink
-                to={"/aboutus"}
-                activeClassName="active"
-                onClick={onClose}
-                className="aboutus p-[10px] hover:bg-[#ffa5004c] hover:text-white duration-[0.5s] px-[15px] flex items-center gap-[10px]"
-              >
-                <div className="flex justify-center items-center">
-                  <TiGroup />
-                </div>
-                Vendors
-              </NavLink>
-              <NavLink
-                to={"/aboutus"}
-                activeClassName="active"
-                onClick={onClose}
-                className="aboutus p-[10px] hover:bg-[#ffa5004c] hover:text-white duration-[0.5s] px-[15px] flex items-center gap-[10px]"
-              >
-                <div className="flex justify-center items-center">
-                  <RiEBike2Line />
-                </div>
-                Riders
-              </NavLink>
-              <NavLink
-                to={"/aboutus"}
-                activeClassName="active"
-                onClick={onClose}
-                className="aboutus p-[10px] hover:bg-[#ffa5004c] hover:text-white duration-[0.5s] px-[15px] flex items-center gap-[10px]"
-              >
-                <div className="flex justify-center items-center">
-                  <RiInformationLine />
-                </div>
-                About Us
-              </NavLink>
+              <Link href="/" passHref>
+                <a
+                  className="aboutus p-[10px] hover:bg-[#ffa5004c] hover:text-white duration-[0.5s] px-[15px] flex items-center gap-[10px]"
+                  onClick={onClose}
+                >
+                  <div className="flex justify-center items-center">
+                    <IoHome />
+                  </div>
+                  Home
+                </a>
+              </Link>
+              <Link href="/faq" passHref>
+                <a
+                  className="aboutus p-[10px] hover:bg-[#ffa5004c] hover:text-white duration-[0.5s] px-[15px] flex items-center gap-[10px]"
+                  onClick={onClose}
+                >
+                  <div className="flex justify-center items-center">
+                    <FaListUl />
+                  </div>
+                  Categories
+                </a>
+              </Link>
+              <Link href="/person" passHref>
+                <a
+                  className="aboutus p-[10px] hover:bg-[#ffa5004c] hover:text-white duration-[0.5s] px-[15px] flex items-center gap-[10px]"
+                  onClick={onClose}
+                  style={{ color: 'black' }}
+                >
+                  <div className="flex justify-center items-center">
+                    <LiaClipboardListSolid />
+                  </div>
+                  Order History
+                </a>
+              </Link>
+              <Link href="/orders">
+                <a
+                  className="aboutus p-[10px] hover:bg-[#ffa5004c] hover:text-white duration-[0.5s] px-[15px] flex items-center gap-[10px]"
+                  onClick={onClose}
+                >
+                  <div className="flex justify-center items-center">
+                    <TiShoppingCart />
+                  </div>
+                  Cart
+                </a>
+              </Link>
+              <Link href="/">
+                <a
+                  className="aboutus p-[10px] hover:bg-[#ffa5004c] hover:text-white duration-[0.5s] px-[15px] flex items-center gap-[10px]"
+                  onClick={onClose}
+                >
+                  <div className="flex justify-center items-center">
+                    <BsCardChecklist />
+                  </div>
+                  Reviews
+                </a>
+              </Link>
+              <Link href="/aboutus">
+                <a
+                  className="aboutus p-[10px] hover:bg-[#ffa5004c] hover:text-white duration-[0.5s] px-[15px] flex items-center gap-[10px]"
+                  onClick={onClose}
+                >
+                  <div className="flex justify-center items-center">
+                    <TiGroup />
+                  </div>
+                  Vendors
+                </a>
+              </Link>
+              <Link href="/aboutus">
+                <a
+                  className="aboutus p-[10px] hover:bg-[#ffa5004c] hover:text-white duration-[0.5s] px-[15px] flex items-center gap-[10px]"
+                  onClick={onClose}
+                >
+                  <div className="flex justify-center items-center">
+                    <RiEBike2Line />
+                  </div>
+                  Riders
+                </a>
+              </Link>
+              <Link href="/aboutus">
+                <a
+                  className="aboutus p-[10px] hover:bg-[#ffa5004c] hover:text-white duration-[0.5s] px-[15px] flex items-center gap-[10px]"
+                  onClick={onClose}
+                >
+                  <div className="flex justify-center items-center">
+                    <RiInformationLine />
+                  </div>
+                  About Us
+                </a>
+              </Link>
               <div className="flex justify-center items-center">
-
-                <button className="absolute bottom-6 hover:bg-[#ffa5004c] duration-300 drop-shadow-xl bg-[#ffa500] py-[8px] px-[50px] shadow-[0px_4px_10px_#00000026] font-[590]">
+                <button className="absolute bottom-6 hover:bg-[#ffa5004c] duration-300 drop-shadow-xl bg-[#ffa500] py-[8px] px-[50px] shadow-[0px_4px_10px_#00000026] font-[590]" onClick={onClose}>
                   Logout
                 </button>
               </div>

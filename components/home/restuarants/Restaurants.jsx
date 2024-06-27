@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useState } from 'react'
 import { IoSearch } from 'react-icons/io5'
 import { Typewriter } from 'react-simple-typewriter'
@@ -7,10 +9,10 @@ import { LuThumbsUp } from 'react-icons/lu'
 import ResturantsDetails from './modal/ResturantsDetails'
 import Resturants from './Resturants'
 import Dashboard from '../dashboard/Dashboard'
-import { useFavoriteProducts } from '../../../Api/contexts/FavoriteProductsContext'
+import { useFavoriteProducts } from '../../../context/FavoriteProductsContext';
 import RestaurantsCards from '../Header/Cards/RestaurantsCards'
 import ProductsCards from '../Header/Cards/ProductsCards'
-import { no_product } from '../../../Assets'
+import { no_product } from '../../../public/assets'; 
 import Products from '../Products'
 
 const Restaurants = ({ product }) => {

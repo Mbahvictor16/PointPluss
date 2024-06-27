@@ -2,7 +2,7 @@ import React from "react";
 import { BsFillHeartFill } from "react-icons/bs";
 import { RiHeartAddFill } from "react-icons/ri";
 import AddToCartButton from "../../../../Helper/AddToCartButton";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 const Favorites = ({ favoriteProducts, products, onRemoveFavorite }) => {
   const favoriteItems = products.filter((product) =>
@@ -68,8 +68,8 @@ const Favorites = ({ favoriteProducts, products, onRemoveFavorite }) => {
       )}
       {favoriteItems.length > 4 && (
         <div className="mt-4 text-center">
-          <Link onClick={window.scrollTo(0, 0)}
-            to="/favs"
+          <Link
+            href={"/favs"}
             className="text-amber-500 text-[20px] md:text-[25px] font-semibold"
           >
             View All Favorites

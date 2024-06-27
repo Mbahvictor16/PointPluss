@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useState } from "react";
 import AddToCartButton from "../../../../Helper/AddToCartButton";
 import Products from "../../Products";
@@ -6,7 +8,7 @@ import { IoClose } from "react-icons/io5";
 import { LuThumbsUp } from "react-icons/lu";
 import { RiEBike2Line } from "react-icons/ri";
 import { TfiTimer } from "react-icons/tfi";
-import { useFavoriteProducts } from "../../../../Api/contexts/FavoriteProductsContext";
+import { useFavoriteProducts } from "../../../../context/FavoriteProductsContext";
 
 const ResturantsDetails = ({
   isOpen,

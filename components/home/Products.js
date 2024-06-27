@@ -1,5 +1,5 @@
-import Rice from '../../Assets/spicy jellof rice 1.png'
-import Burger from '../../Assets/classic burger 1.png'
+import Rice from '../../public/assets/spicy jellof rice 1.png'
+import Burger from '../../public/assets/classic burger 1.png'
 
 let Products = [
   {

@@ -1,6 +1,7 @@
-// src/contexts/AvatarContext.js
+'use client'
+
 import React, { createContext, useState } from 'react'
-import { img_avatar } from '../../Assets' // Adjust the path as needed
+import { img_avatar } from '../public/assets' 
 
 const AvatarContext = createContext()
 

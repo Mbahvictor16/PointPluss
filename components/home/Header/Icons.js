@@ -7,7 +7,7 @@ import {
   shawarma,
   soup,
   spagetti
-} from '../../../Assets'
+} from '../../../public/assets/index'
 
 
 let Icons = [
