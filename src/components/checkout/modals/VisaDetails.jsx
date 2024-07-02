@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useState } from "react";
 import SuccessModal from "./SuccessModal";
 import { FaRegCreditCard } from "react-icons/fa6";
@@ -5,7 +7,7 @@ import { TiCalendar } from "react-icons/ti";
 import { FiLock } from "react-icons/fi";
 import { IoClose } from "react-icons/io5";
 import { BsToggle2On } from "react-icons/bs";
-import { visa2 } from "../../../Assets";
+import { visa2 } from "../../../../public/assets";
 
 const VisaDetails = ({ isOpen, onClose }) => {
   const [cardNumber, setCardNumber] = useState("");

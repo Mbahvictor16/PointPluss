@@ -1,17 +1,16 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { redirect } from "next/navigation";
 import { IoClose } from "react-icons/io5";
-import { success } from "../../../Assets";
+import { success } from "../../../../public/assets";
 
 const SuccessModal = ({ isOpen, onClose }) => {
-  const navigate = useNavigate();
 
   const handleTrackOrder = () => {
-    navigate("/ordertracking");
+    redirect("/ordertracking");
   };
 
   const handleClose = () => {
-    navigate("/");
+    redirect("/");
   };
 
   return (

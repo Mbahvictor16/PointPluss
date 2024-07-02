@@ -1,5 +1,3 @@
-"use client ";
-
 import React from "react";
 import Link from "next/link";
 
@@ -35,6 +33,7 @@ const Dashboard = ({ isOpen, onClose }) => {
               </div>
             </div>
             <div className="flex font-[590] flex-col w-full justify-start">
+              
               <Link
                 href="/"
                 className="aboutus p-[10px] hover:bg-[#ffa5004c] hover:text-white duration-[0.5s] px-[15px] flex items-center gap-[10px]"

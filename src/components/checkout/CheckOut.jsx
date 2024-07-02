@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useState } from "react";
 import { FaChevronLeft } from "react-icons/fa";
 import { Link } from "next/link";
@@ -6,7 +8,7 @@ import { FaCircle } from "react-icons/fa";
 import Headers from "../../helper/Headers";
 import CardDetails from "./modals/CardDetails";
 import VisaDetails from "./modals/VisaDetails";
-import { masterCard, opay, visa } from "../../Assets";
+import { masterCard, opay, visa } from "../../../public/assets";
 import Dashboard from "../home/dashboard/Dashboard";
 
 const CheckOut = () => {
