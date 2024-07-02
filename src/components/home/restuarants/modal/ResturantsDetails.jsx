@@ -24,7 +24,7 @@ const ResturantsDetails = ({ isOpen, onClose, rest }) => {
     <div>
       {isOpen && (
         <div className="modal-overlay">
-          <div className="modal-content h-screen flex-col w-full overflow-hidden overflow-y-auto drop-shadow-xl bg-white shadow-[0px_4px_10px_#00000026]">
+          <div className="modal-content h-screen flex-col w-full no-scrollbar overflow-hidden overflow-y-auto drop-shadow-xl bg-white shadow-[0px_4px_10px_#00000026]">
             <div className=" text-left flex flex-col">
               <div className="h-[200px]">
                 <img

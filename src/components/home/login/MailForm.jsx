@@ -14,7 +14,7 @@ function MailForm({ setFormType, onClose }) {
   };
 
   return (
-    <div className="flex rounded-[10px] flex-col gap-[20px] border p-[50px]">
+    <div className="flex rounded-[10px] flex-col gap-[20px] border px-[20px] py-[40px] sm:p-[50px]">
       <div className="flex gap-[20px] justify-start flex-col">
         <div className="flex justify-center p-[2px] rounded-[80px] w-[25%] bg-amber-500 center items-center">
           <img src={email} height={"10px"} alt="phone" />

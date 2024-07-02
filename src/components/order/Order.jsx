@@ -46,7 +46,7 @@ const Order = () => {
           </div>
         </div>
         <div className="Cart flex flex-col gap-[30px] justify-between w-full lg:flex-row xl:flex-row mb-[30px]">
-          <div className="w-[100%] h-[400px] overflow-hidden overflow-y-auto xl:w-[70%]">
+          <div className="w-[100%] h-[400px] no-scrollbar overflow-hidden overflow-y-auto xl:w-[70%]">
             <CartItems />
           </div>
           <div className="w-[100%] xl:w-[40%] p-[20px] drop-shadow-xl flex flex-col gap-[20px] shadow-[0px_4px_10px_#00000026] h-[400px] bg-gray-100">
