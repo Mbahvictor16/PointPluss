@@ -3,6 +3,7 @@ import "./globals.css";
 import { AvatarProvider } from "../context/AvatarContext";
 import ProductContextProvider from "../context/ProductContext";
 import { FavoriteProductsProvider } from "../context/FavoriteProductsContext";
+import Sidebar from '../helper/Sidebar';
 
 const PlusJakartaSans = localFont({
   src: '../../public//fonts/PlusJakartaSans-VariableFont_wght.ttf'
@@ -19,7 +20,13 @@ export default function RootLayout({ children }) {
       <body className={`${PlusJakartaSans.className}`}>
         <AvatarProvider>
           <ProductContextProvider>
-            <FavoriteProductsProvider>{children}</FavoriteProductsProvider>
+            <FavoriteProductsProvider>
+              <Sidebar />
+              <main>
+
+              {children}
+              </main>
+            </FavoriteProductsProvider>
           </ProductContextProvider>
         </AvatarProvider>
       </body>
