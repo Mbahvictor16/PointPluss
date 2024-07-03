@@ -179,8 +179,8 @@ const ResturantsDetails = ({ isOpen, onClose, rest }) => {
               ))}
             </div>
             <span
-              className="absolute p-[5px] drop-shadow-xl shadow-md rounded-[60px] top-5 right-8 cursor-pointer font-semibold text-red-600 border-black flex justify-center items-center bg-white px-2"
               onClick={onClose}
+              className="absolute rounded-[20px] drop-shadow-xl flex justify-center cursor-pointer shadow bg-gray-400 text-white items-center top-10 sm:top-4 right-5 border  transform transition-transform duration-300 hover:scale-105"
             >
               <IoClose size={"1.5rem"} />
             </span>
