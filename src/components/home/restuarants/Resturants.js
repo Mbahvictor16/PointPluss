@@ -5,7 +5,7 @@ import {
   pizzeria,
   sweet_sensation,
   tfc,
-} from "../../../../public/assets";
+} from "../../../../public/assets/index";
 
 let Resturants = [
   {

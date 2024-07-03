@@ -182,17 +182,17 @@ const Header = () => {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 5,
-          slidesToScroll: 5,
-          initialSlide: 5,
+          slidesToShow: 4,
+          slidesToScroll: 4,
+          initialSlide: 4,
         },
       },
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 5,
-          slidesToScroll: 5,
-          initialSlide: 5,
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          initialSlide: 3,
         },
       },
     ],
@@ -313,7 +313,7 @@ const Header = () => {
                               />
                             </picture>
                           </div>
-                          <div className="flex justify-center items-center">
+                          <div className="flex justify-center font-medium items-center">
                             <p>{icon.text}</p>
                           </div>
                         </div>
@@ -321,7 +321,7 @@ const Header = () => {
                     </Slider>
                   </div>
                 </div>
-                <div className="xl:p-[50px] lg:p-[50px] p-[20px] w-full bg-gray-200">
+                <div className="lg:p-[50px] p-[20px] w-full bg-gray-200">
                   <div className="flex items-center text-left gap-1 mb-[20px] ">
                     <MdLocalOffer size={"1.5rem"} className="text-amber-500" />
                     <p className="text-[20px] md:text-[25px] font-[590]">
@@ -381,7 +381,7 @@ const Header = () => {
                   products={products}
                   onRemoveFavorite={handleRemoveFavorite}
                 />
-                <div className="xl:px-[50px] lg:p-[50px] p-[20px] Resturants">
+                <div className="lg:p-[50px] p-[20px]">
                   <div className="flex items-center text-left mt-[50px] gap-1 mb-[20px] ">
                     <IoStorefrontOutline
                       size={"1.5rem"}
