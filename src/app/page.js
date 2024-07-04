@@ -30,7 +30,6 @@ export default function Home({children}) {
     <FavoriteProductsProvider>
       <div className="app-container">
         <div className="flex">
-          <Sidebar />
           <div className="Routes overflow-y-scroll ml-0 max-h-[calc(100vh)] w-[100%]">
             <HomePage/>
             {children}
