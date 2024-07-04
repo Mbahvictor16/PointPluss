@@ -21,10 +21,9 @@ export default function RootLayout({ children }) {
         <AvatarProvider>
           <ProductContextProvider>
             <FavoriteProductsProvider>
-              <Sidebar />
-              <main>
-
-              {children}
+              <main className='flex'>
+                <Sidebar />
+                {children}
               </main>
             </FavoriteProductsProvider>
           </ProductContextProvider>
