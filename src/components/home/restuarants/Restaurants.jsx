@@ -14,6 +14,7 @@ import RestaurantsCards from "../Header/Cards/RestaurantsCards";
 import ProductsCards from "../Header/Cards/ProductsCards";
 import { no_product } from "../../../../public/assets";
 import Products from "../Products";
+import LoginModal from "../login/LoginModal";
 
 const Restaurants = ({ product }) => {
   const [rest] = useState(Resturants);
@@ -26,6 +27,7 @@ const Restaurants = ({ product }) => {
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
 
   const handleClickRestaurant = (resturants) => {
     setSelectedProduct(resturants); // Set the selected restaurant
@@ -33,6 +35,14 @@ const Restaurants = ({ product }) => {
 
   const handleToggleModal = () => {
     setIsDashboardModalOpen(true); // Always open the Dashboard
+  };
+
+  const handleOpenModal = () => {
+    setIsLoginModalOpen(true);
+  };
+
+  const handleToggleModalClose = () => {
+    setIsLoginModalOpen(false);
   };
 
   const handleToggleModalClose2 = () => {
@@ -133,7 +143,7 @@ const Restaurants = ({ product }) => {
   return (
     <div>
       <div className="search h-[480px]">
-        <NavLinks handleToggleModal={handleToggleModal} />
+        <NavLinks handleOpenModal={handleOpenModal} handleToggleModal={handleToggleModal} />
         <div className="content2 [font-family:var(--b-2-font-family)] top-[30%] flex flex-col justify-center items-center w-[90%] left-[100%] -translate-x-[-6%] -translate-y-[-30%] gap-[20px]">
           <div className="p-[10px] font-sans h-[150px] mb-[5px] font-semibold text-[30px] w-[100%] flex justify-start items-center text-white">
             <div className="py-[30px] lg:ml-[250px] pl-[30px] ">
@@ -187,33 +197,30 @@ const Restaurants = ({ product }) => {
         <>
           {filteredRestaurants.length > 0 || filteredProducts.length > 0 ? (
             <div className="search-results flex flex-col gap-5 p-4">
-              <div className="category-selector text-lg flex justify-center items-center gap-5 mt-5">
+              <div className="category-selector text-lg flex justify-start items-center gap-5 mt-5">
                 <button
-                  className={`p-[10px] font-[500] mx-[3px] border-b-2 ${
-                    selectedCategory === "All"
+                  className={`p-[10px] font-[500] mx-[3px] border-b-2 ${selectedCategory === "All"
                       ? "border-amber-500 text-amber-500"
                       : "border-transparent"
-                  }`}
+                    }`}
                   onClick={() => setSelectedCategory("All")}
                 >
                   All
                 </button>
                 <button
-                  className={`p-[10px] font-[500] mx-[3px] border-b-2 ${
-                    selectedCategory === "Restaurants"
+                  className={`p-[10px] font-[500] mx-[3px] border-b-2 ${selectedCategory === "Restaurants"
                       ? "border-amber-500 text-amber-500"
                       : "border-transparent"
-                  }`}
+                    }`}
                   onClick={() => setSelectedCategory("Restaurants")}
                 >
                   Restaurants
                 </button>
                 <button
-                  className={`p-[10px] font-[500] mx-[3px] border-b-2 ${
-                    selectedCategory === "Products"
+                  className={`p-[10px] font-[500] mx-[3px] border-b-2 ${selectedCategory === "Products"
                       ? "border-amber-500 text-amber-500"
                       : "border-transparent"
-                  }`}
+                    }`}
                   onClick={() => setSelectedCategory("Products")}
                 >
                   Products
@@ -274,6 +281,10 @@ const Restaurants = ({ product }) => {
                     isOpen={isDashboardModalOpen}
                     onClose={handleToggleModalClose2}
                     handleToggleModal={handleToggleModal}
+                  />
+                  <LoginModal
+                    isOpen={isLoginModalOpen}
+                    onClose={handleToggleModalClose}
                   />
                 </div>
               </div>

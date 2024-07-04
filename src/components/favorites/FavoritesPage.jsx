@@ -1,22 +1,23 @@
+'use client'
+
 import React, { useState } from "react";
 import NavLinks from "../home/Header/nav-links/NavLinks";
 import { BsFillHeartFill } from "react-icons/bs";
 import AddToCartButton from "../../helper/AddToCartButton";
 import { IoSearch } from "react-icons/io5";
 import { Typewriter } from "react-simple-typewriter";
-import { useNavigate } from "react-router-dom";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { RiHeartAddFill } from "react-icons/ri";
 import Dashboard from "../home/dashboard/Dashboard";
-import { useFavoriteProducts } from "../../Api/contexts/FavoriteProductsContext"; // Correct import
+import { useFavoriteProducts } from "@/src/context/FavoriteProductsContext"; 
 import Products from "../home/Products";
 import ProductsCards from "../home/Header/Cards/ProductsCards";
 import RestaurantsCards from "../home/Header/Cards/RestaurantsCards";
-import { no_product } from "../../Assets";
+import { no_product } from "@/public/assets";
 import Resturants from "../home/restuarants/Resturants";
+import LoginModal from "../home/login/LoginModal";
 
 const FavoritesPage = () => {
-  const navigate = useNavigate();
   const [isDashboardModalOpen, setIsDashboardModalOpen] = useState(false);
   const { favoriteProducts, handleAddFavorite, handleRemoveFavorite } =
     useFavoriteProducts(); // Correct context usage
@@ -27,9 +28,10 @@ const FavoritesPage = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [rest] = useState(Resturants);
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
 
   const handleStartShopping = () => {
-    navigate("/");
+    redirect("/");
   };
 
   const handleClickRestaurant = (resturants) => {
@@ -46,6 +48,14 @@ const FavoritesPage = () => {
 
   const handleToggleModalClose2 = () => {
     setIsDashboardModalOpen(false); // Close the
+  };
+
+  const handleOpenModal = () => {
+    setIsLoginModalOpen(true);
+  }; 
+
+  const handleToggleModalClose = () => {
+    setIsLoginModalOpen(false);
   };
 
   const handleSearch = () => {
@@ -142,7 +152,7 @@ const FavoritesPage = () => {
   return (
     <div>
       <div className="search h-[480px]">
-        <NavLinks handleToggleModal={handleToggleModal} />
+        <NavLinks handleOpenModal={handleOpenModal} handleToggleModal={handleToggleModal} />
         <div className="content2 [font-family:var(--b-2-font-family)] top-[30%] flex flex-col justify-center items-center w-[90%] left-[100%] -translate-x-[-6%] -translate-y-[-30%] gap-[20px]">
           <div className="p-[10px] font-sans h-[150px] mb-[5px] font-[590] text-[30px] w-[100%] flex justify-start items-center text-white">
             <div className="py-[30px] lg:ml-[250px] pl-[30px] ">
@@ -196,33 +206,30 @@ const FavoritesPage = () => {
         <>
           {filteredRestaurants.length > 0 || filteredProducts.length > 0 ? (
             <div className="search-results flex flex-col gap-5 p-4">
-              <div className="category-selector text-lg flex justify-center items-center gap-5 mt-5">
+              <div className="category-selector text-lg flex justify-start items-center gap-5 mt-5">
                 <button
-                  className={`p-[10px] font-[500] mx-[3px] border-b-2 ${
-                    selectedCategory === "All"
+                  className={`p-[10px] font-[500] mx-[3px] border-b-2 ${selectedCategory === "All"
                       ? "border-amber-500 text-amber-500"
                       : "border-transparent"
-                  }`}
+                    }`}
                   onClick={() => setSelectedCategory("All")}
                 >
                   All
                 </button>
                 <button
-                  className={`p-[10px] font-[500] mx-[3px] border-b-2 ${
-                    selectedCategory === "Restaurants"
+                  className={`p-[10px] font-[500] mx-[3px] border-b-2 ${selectedCategory === "Restaurants"
                       ? "border-amber-500 text-amber-500"
                       : "border-transparent"
-                  }`}
+                    }`}
                   onClick={() => setSelectedCategory("Restaurants")}
                 >
                   Restaurants
                 </button>
                 <button
-                  className={`p-[10px] font-[500] mx-[3px] border-b-2 ${
-                    selectedCategory === "Products"
+                  className={`p-[10px] font-[500] mx-[3px] border-b-2 ${selectedCategory === "Products"
                       ? "border-amber-500 text-amber-500"
                       : "border-transparent"
-                  }`}
+                    }`}
                   onClick={() => setSelectedCategory("Products")}
                 >
                   Products
@@ -272,11 +279,10 @@ const FavoritesPage = () => {
                       </div>
                       <span
                         onClick={() => handleRemoveFavorite(product)}
-                        className={`absolute flex justify-center items-center top-4 right-4 border rounded-[20px] p-1 pt-[6px] cursor-pointer ${
-                          favoriteProducts.includes(product.id)
+                        className={`absolute flex justify-center items-center top-4 right-4 border rounded-[20px] p-1 pt-[6px] cursor-pointer ${favoriteProducts.includes(product.id)
                             ? "text-red-500 bg-white"
                             : "text-amber-500 bg-gray-200"
-                        }`}
+                          }`}
                       >
                         <BsFillHeartFill />
                       </span>
@@ -299,6 +305,10 @@ const FavoritesPage = () => {
                 isOpen={isDashboardModalOpen}
                 onClose={handleToggleModalClose2}
                 handleToggleModal={handleToggleModal}
+              />
+              <LoginModal
+                isOpen={isLoginModalOpen}
+                onClose={handleToggleModalClose}
               />
             </div>
           )}

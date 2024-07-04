@@ -13,9 +13,9 @@ const ProductsCards = ({
 
   return (
     <div className="sm:p-[50px] p-[20px] w-full">
-      <div className="flex items-center text-left mt-[5px] gap-1 mb-[20px] ">
+      <div className="flex items-center text-left mt-[5px] gap-[5px] mb-[20px] ">
         <BiFoodMenu size={"1.5rem"} className="text-amber-500" />
-        <p className="text-[20px] md:text-[25px] font-[590]">
+        <p className="text-[20px] font-[590]">
           Cuisines matching your search
         </p>
       </div>

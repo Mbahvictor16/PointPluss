@@ -251,7 +251,7 @@ const Header = () => {
           </div>
         </div>
         {error ? (
-          <div className="text-center h-[500px] flex flex-col justify-center items-center font-[590] text-[25px] text-amber-500 text-xl">
+          <div className="text-center h-[400px] flex flex-col justify-center items-center font-[590] text-[25px] text-amber-500 text-xl">
             <Image src={no_product} alt="no-product" />
             <p>No results found. Please try again.</p>
           </div>
@@ -259,7 +259,7 @@ const Header = () => {
           <>
             {filteredRestaurants.length > 0 || filteredProducts.length > 0 ? (
               <div className="search-results flex flex-col gap-5 p-4">
-                <div className="category-selector text-lg flex justify-center items-center gap-5 mt-5">
+                  <div className="category-selector sm:p-[50px] p-[20px] text-lg flex justify-start items-center gap-3 mt-5">
                   <button
                     className={`p-[10px] font-[500] mx-[3px] border-b-2 ${
                       selectedCategory === "All"
@@ -382,7 +382,7 @@ const Header = () => {
                   onRemoveFavorite={handleRemoveFavorite}
                 />
                 <div className="lg:p-[50px] p-[20px]">
-                  <div className="flex items-center text-left mt-[50px] gap-1 mb-[20px] ">
+                  <div className="flex items-center text-left mt-[50px] gap-[5px] mb-[20px] ">
                     <IoStorefrontOutline
                       size={"1.5rem"}
                       className="text-amber-500"

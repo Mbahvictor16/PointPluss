@@ -10,20 +10,20 @@ const Favorites = ({ favoriteProducts, products, onRemoveFavorite }) => {
   );
 
   return (
-    <div className="Favorites lg:p-[50px] w-full">
+    <div className="lg:p-[50px] p-[20px] w-full">
       {favoriteProducts.length === 0 ? (
         <p></p>
       ) : (
         <div className="flex flex-col">
-          <div className="flex items-center mb-[20px] gap-[10px]">
+          <div className="flex items-center mb-[20px] gap-[5px]">
             <div className="flex justify-center items-center">
               <RiHeartAddFill size={"1.5rem"} className="text-amber-500" />
             </div>
-            <p className="text-[20px] md:text-[25px] [font-family:var(--h-3-font-family)] font-semibold">
+            <p className="text-[20px] md:text-[25px] font-[590]">
               Favorites
             </p>
           </div>
-          <div className="flex">
+          <div className="flex w-full overflow-auto h-[200px] no-scrollbar">
             {favoriteItems.slice(0, 4).map((product) => (
               <div
                 key={product.id}
@@ -71,7 +71,7 @@ const Favorites = ({ favoriteProducts, products, onRemoveFavorite }) => {
         <div className="mt-4 text-center">
           <Link
             href={"/favs"}
-            className="text-amber-500 text-[20px] md:text-[25px] font-semibold"
+            className="text-amber-500 text-[20px] md:text-[25px] font-[590]"
           >
             View All Favorites
           </Link>
