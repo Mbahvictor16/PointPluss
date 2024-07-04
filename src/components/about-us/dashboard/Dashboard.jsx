@@ -1,3 +1,5 @@
+'use client'
+
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "next/link";
@@ -32,8 +34,6 @@ const Dashboard = ({ isOpen, onClose }) => {
           <div className="flex font-[590] mb-4 flex-col w-full justify-start">
             <Link
               href={"/"}
-              exact
-              activeClassName="active"
               onClick={onClose}
               className="aboutus p-[10px] hover:bg-[#ffa5004c] hover:text-white duration-[0.5s] px-[20px] flex items-center gap-[10px]"
             >
@@ -41,8 +41,6 @@ const Dashboard = ({ isOpen, onClose }) => {
             </Link>
             <Link
               href={"/faq"}
-              exact
-              activeClassName="active"
               onClick={onClose}
               className="aboutus p-[10px] hover:bg-[#ffa5004c] hover:text-white duration-[0.5s] px-[20px] flex items-center gap-[10px]"
             >
@@ -50,7 +48,6 @@ const Dashboard = ({ isOpen, onClose }) => {
             </Link>
             <Link
               href={"/person"}
-              activeClassName="active"
               onClick={onClose}
               className="aboutus p-[10px] hover:bg-[#ffa5004c] hover:text-white duration-[0.5s] px-[20px] flex items-center gap-[10px]"
             >
@@ -58,7 +55,6 @@ const Dashboard = ({ isOpen, onClose }) => {
             </Link>
             <Link
               href={"/contact"}
-              activeClassName="active"
               onClick={onClose}
               className="aboutus p-[10px] hover:bg-[#ffa5004c] hover:text-white duration-[0.5s] px-[20px] flex items-center gap-[10px]"
             >

@@ -126,7 +126,7 @@ const Dashboard = ({ isOpen, onClose }) => {
               </Link>
               <div className="flex justify-center items-center">
                 <button
-                  className="absolute bottom-6 hover:bg-[#ffa5004c] duration-300 drop-shadow-xl bg-[#ffa500] py-[8px] px-[50px] shadow-[0px_4px_10px_#00000026] font-[590]"
+                  className="absolute bottom-9 hover:bg-[#ffa5004c] duration-300 drop-shadow-xl bg-[#ffa500] py-[8px] px-[50px] shadow-[0px_4px_10px_#00000026] font-[590]"
                   onClick={onClose}
                 >
                   Logout
