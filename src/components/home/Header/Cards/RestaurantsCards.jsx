@@ -15,7 +15,7 @@ const RestaurantsCards = ({
 
   return (
     <div className="xl:px-[50px] lg:p-[50px] p-[20px] Resturants">
-      <div className="flex items-center text-left mt-[5px] gap-1 mb-[20px] ">
+      <div className="flex items-center text-left mt-[5px] gap-[5px] mb-[20px] ">
         <IoStorefrontOutline size={"1.5rem"} className="text-amber-500" />
         <p className="text-[20px] md:text-[25px] font-[590]">
           Restaurants matching your search

@@ -10,6 +10,8 @@ import { MenuItems } from "../drop-down/menu-items/MenuItems";
 import { RxHamburgerMenu } from "react-icons/rx";
 import AvatarContext from "../../../../context/AvatarContext";
 import Image from "next/image";
+import { MdOutlinePerson } from "react-icons/md";
+import { TbLogout2 } from "react-icons/tb";
 
 export default function NavLinks({ handleOpenModal, handleToggleModal }) {
   const [click, setClick] = useState(false);
@@ -110,7 +112,7 @@ export default function NavLinks({ handleOpenModal, handleToggleModal }) {
                       className="p-1 px-2 hover:bg-[#ffa5004c] flex items-center gap-[10px] font-[590] text-black hover:text-white rounded cursor-pointer"
                     >
                       <MdOutlinePerson size={"1.2rem"} />
-                      <Link to={"/person"}>
+                      <Link href={"/person"}>
                         Profile
                       </Link>
                     </li>
@@ -119,7 +121,7 @@ export default function NavLinks({ handleOpenModal, handleToggleModal }) {
                       className="p-1 px-2 hover:bg-[#ffa5004c] flex items-center gap-[10px] text-black hover:text-white font-[590] rounded cursor-pointer"
                     >
                       <TbLogout2 size={"1.2rem"} />
-                      <Link to={"/"}>
+                      <Link href={"/"}>
                         Logout
                       </Link>
                     </li>
