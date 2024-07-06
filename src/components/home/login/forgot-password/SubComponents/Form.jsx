@@ -1,13 +1,11 @@
-import Link from 'next/link'
 import React from 'react'
 import { FiLock } from 'react-icons/fi'
-import { IoArrowBack } from 'react-icons/io5'
 import { MdOutlineMail } from 'react-icons/md'
 
 const Form = () => {
     return (
         <section>
-            <div className='w-full mb-8 flex gap-4 justify-center items-center'>
+            <div className='w-full mb-5 flex gap-4 justify-center items-center'>
                 <div className='border text-center rounded-lg p-[10px] text-black border-solid border-[#898989]'>
                     <FiLock size={"2rem"} />
                 </div>
@@ -50,10 +48,6 @@ const Form = () => {
                 >
                     Reset password
                 </button>
-                <Link href={"/"} className='flex justify-center items-center gap-3'>
-                    <IoArrowBack/>
-                    <span className="font-medium text-gray-500">Back to Home</span>
-                </Link>
             </form>
         </section>
     )

@@ -7,7 +7,7 @@ import { MdOutlineMail } from "react-icons/md";
 import { FiEye, FiEyeOff, FiLock } from "react-icons/fi";
 import Link from "next/link";
 
-function MailForm({ setFormType, onClose }) {
+function MailForm({ setFormType }) {
   const [open, setOpen] = useState(false);
 
   const toggle = () => {
@@ -68,9 +68,7 @@ function MailForm({ setFormType, onClose }) {
               )}
             </div>
           </div>
-          <Link href={"/forgotpass"}>
-            <p className="text-right font-medium underline cursor-pointer text-gray-500">Forgot password</p>
-          </Link>
+          <p onClick={() => setFormType("forgotpass")} className="text-right font-medium underline cursor-pointer text-gray-500">Forgot password</p>
           <button
             className="bg-amber-500 mt-4 font-[590]"
             style={{

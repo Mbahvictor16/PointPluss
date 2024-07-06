@@ -5,6 +5,7 @@ import { useState } from "react";
 import SmsForm from "./SmsForm";
 import MailForm from "./MailForm";
 import SignUpForm from "./SignUpForm";
+import ForgotPassword from "./forgot-password/ForgotPassword";
 
 const LoginModal = ({ isOpen, onClose }) => {
   const [formType, setFormType] = useState("sms");
@@ -24,6 +25,9 @@ const LoginModal = ({ isOpen, onClose }) => {
             {formType === "mail" && <MailForm setFormType={setFormType} />}
             {formType === "signup" && (
               <SignUpForm onClose={onClose} setFormType={setFormType} />
+            )}
+            {formType === "forgotpass" && (
+              <ForgotPassword onClose={onClose} setFormType={setFormType} />
             )}
           </motion.div>
         </div>
