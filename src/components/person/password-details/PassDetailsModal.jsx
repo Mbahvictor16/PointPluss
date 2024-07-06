@@ -24,7 +24,7 @@ const PassDetailsModal = ({ isOpen, onClose }) => {
     <div>
       {isOpen && (
         <div className="modal-overlay">
-          <form className="modal-content card_details rounded-[25px] p-[20px] px-[30px] w-[90%] md:w-[70%] lg:w-[50%] h-auto flex-col xl:w-[50%] drop-shadow-xl bg-white shadow-[0px_4px_10px_#00000026]">
+          <form className="modal-content card_details rounded-[25px] py-[30px] sm:p-[20px] px-[30px] w-[100%] sm:w-[80%] lg:w-[50%] h-auto flex-col xl:w-[50%] drop-shadow-xl bg-white shadow-[0px_4px_10px_#00000026]">
             <p className="text-[25px] tracking-wide text-center w-full font-semibold">
               Password
             </p>
@@ -75,7 +75,7 @@ const PassDetailsModal = ({ isOpen, onClose }) => {
                   <input
                     type={open3 === false ? "password" : "text"}
                     placeholder="Re-enter password"
-                    className="p-[10px] focus:outline-none focus:shadow-outline"
+                    className="p-[10px] w-full focus:outline-none focus:shadow-outline"
                   />
                 </div>
                 <div className="flex justify-center items-center p-[10px] text-xl">

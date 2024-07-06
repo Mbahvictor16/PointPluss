@@ -14,13 +14,10 @@ const RestaurantsCards = ({
   if (filteredRestaurants.length === 0) return null;
 
   return (
-    <div className="xl:px-[50px] lg:p-[50px] p-[20px] Resturants">
-      <div className="flex items-center text-left mt-[5px] gap-[5px] mb-[20px] ">
-        <IoStorefrontOutline size={"1.5rem"} className="text-amber-500" />
-        <p className="text-[20px] md:text-[25px] font-[590]">
-          Restaurants matching your search
-        </p>
-      </div>
+    <div className="lg:p-[50px] p-[20px] Resturants">
+      <p className="text-[20px] md:text-[25px] mb-[20px] text-left font-[590]">
+        Restaurants matching <span>search</span>
+      </p>
       <div className="resturants grid grid-cols-2 xl:grid-cols-4 lg:grid-cols-3 gap-5 p-4">
         {filteredRestaurants.map((restaurant) => (
           <div

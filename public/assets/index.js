@@ -44,10 +44,12 @@ import no_product from './no-product.png'
 import point1 from './point2.png'
 import email from './email.png'
 import cash from './cash.png'
+import linkedIn from './linkedIn.png'
 
 export {
   google,
   success,
+  linkedIn,
   email,
   cash,
   point1,

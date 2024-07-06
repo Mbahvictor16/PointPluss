@@ -8,14 +8,14 @@ const ContactDetailsModal = ({ isOpen, onClose }) => {
     <div>
       {isOpen && (
         <div className="modal-overlay">
-          <form className="modal-content card_details rounded-[25px] p-[20px] px-[40px] w-[80%] md:w-[39%] lg:w-[36%] h-auto flex-col xl:w-[36%] drop-shadow-xl bg-white shadow-[0px_4px_10px_#00000026]">
+          <form className="modal-content card_details rounded-[25px] p-[40px] sm:p-[20px] px-[40px] w-[100%] sm:w-[70%] lg:w-[36%] h-auto flex-col drop-shadow-xl bg-white shadow-[0px_4px_10px_#00000026]">
             <div className="flex justify-center p-[5px] rounded-[80px] w-[20%] bg-amber-500 center items-center">
               <img src={phone} height={"10px"} alt="phone" />
             </div>
             <p className="text-[24px] mt-[3px] text-left w-full font-semibold">
               Add phone number
             </p>
-            <p className="mt-[20px] font-normal">
+            <p className="mt-[20px] text-[16px] font-normal">
               <span className="text-gray-600 font-medium">
                 Your phone number is already verified.
               </span>
@@ -33,7 +33,7 @@ const ContactDetailsModal = ({ isOpen, onClose }) => {
             >
               <IoClose size={"1.5rem"} />
             </span>
-            <div className="flex justify-center gap-[20px] mt-[30px] items-center w-full">
+            <div className="flex justify-center gap-[20px] text-[16px] mt-[30px] items-center w-full">
               <button
                 className="bg-amber-500 text-[18px] rounded-[20px] shadow-[0px_4px_10px_#00000026] w-[80%] p-[7px] text-white font-semibold"
                 type="submit"
@@ -47,6 +47,9 @@ const ContactDetailsModal = ({ isOpen, onClose }) => {
                 WhatsApp
               </button>
             </div>
+            <p className="mt-5 text-center text-gray-600">
+              Protected by <span className="text-amber-500">Private Policy</span> and <span className="text-amber-500">Terms of services</span> apply.
+            </p>
           </form>
         </div>
       )}

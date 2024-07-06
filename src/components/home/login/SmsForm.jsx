@@ -1,8 +1,9 @@
 import React from "react";
 import { IoClose } from "react-icons/io5";
 import PhoneNumberInput from "../../person/phone-input/PhoneNumberInput";
-import { google } from "../../../../public/assets";
 import { MdOutlineMailOutline } from "react-icons/md";
+import LinkedIn from "./buttons/LinkedIn";
+import GoogleBtn from "./buttons/GoogleBtn";
 
 function SmsForm({ onClose, setFormType }) {
   return (
@@ -12,7 +13,7 @@ function SmsForm({ onClose, setFormType }) {
         <p className="font-medium text-gray-500">Let's start off with your phone number.</p>
       </div>
       <PhoneNumberInput />
-      <div className='flex mt-[10px] gap-4 justify-center items-center'>
+      <div className='flex mt-[20px] gap-4 justify-center items-center'>
         <button className="bg-amber-100 py-[6px] w-full rounded-[20px] text-amber-500 font-[590]">SMS</button>
         <button className="bg-amber-500 py-[6px] w-full rounded-[20px] text-white font-[590]">WhatsApp</button>
       </div>
@@ -24,15 +25,9 @@ function SmsForm({ onClose, setFormType }) {
         <p>or</p>
         <hr className="w-[50%]" />
       </div>
-      <button className="border px-[15px] py-3 rounded-[20px] border-gray-300">
-        <div className="flex justify-between w-[60%]">
-          <div className="w-[20px] h-[20px]">
-            <img src={google} className="w-full object-cover" alt="google" />
-          </div>
-          <p className="font-[590]">Google</p>
-        </div>
-      </button>
-      <button className="border px-[15px] py-2 rounded-[20px] border-gray-300" onClick={() => setFormType("mail")}>
+      <GoogleBtn/>
+      <LinkedIn/>
+      <button className="border px-[15px] py-2 rounded-[20px] mb-9 border-gray-300" onClick={() => setFormType("mail")}>
         <div className="flex justify-between w-[60%]">
           <div className="text-amber-500 flex justify-center items-center">
             <MdOutlineMailOutline size={"1.5rem"} />

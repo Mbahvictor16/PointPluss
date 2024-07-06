@@ -5,6 +5,7 @@ import { IoArrowBack, IoClose } from "react-icons/io5";
 import { email } from "../../../../public/assets";
 import { MdOutlineMail } from "react-icons/md";
 import { FiEye, FiEyeOff, FiLock } from "react-icons/fi";
+import Link from "next/link";
 
 function MailForm({ setFormType, onClose }) {
   const [open, setOpen] = useState(false);
@@ -19,11 +20,11 @@ function MailForm({ setFormType, onClose }) {
         <div className="flex justify-center p-[2px] rounded-[80px] w-[25%] bg-amber-500 center items-center">
           <img src={email} height={"10px"} alt="phone" />
         </div>
-        <h1 className="text-black lg:text-3xl text-2xl lg:font-[590] font-[590] tracking-wide">
+        <h1 className="text-black lg:text-2xl text-xl lg:font-[590] font-[590] tracking-wide">
           Enter email and password
         </h1>
         <p className="font-medium text-gray-500">
-          Let's start off with your Email address and Password
+          Please enter your details to sign in
         </p>
       </div>
       <div>
@@ -67,7 +68,9 @@ function MailForm({ setFormType, onClose }) {
               )}
             </div>
           </div>
-
+          <Link href={"/forgotpass"}>
+            <p className="text-right font-medium underline cursor-pointer text-gray-500">Forgot password</p>
+          </Link>
           <button
             className="bg-amber-500 mt-4 font-[590]"
             style={{

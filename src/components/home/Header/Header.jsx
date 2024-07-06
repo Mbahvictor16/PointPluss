@@ -259,9 +259,9 @@ const Header = () => {
           <>
             {filteredRestaurants.length > 0 || filteredProducts.length > 0 ? (
               <div className="search-results flex flex-col gap-5 p-4">
-                  <div className="category-selector sm:p-[50px] p-[20px] text-lg flex justify-start items-center gap-3 mt-5">
+                  <div className="category-selector sm:px-[50px] px-[20px] text-lg flex justify-start items-center gap-1">
                   <button
-                    className={`p-[10px] font-[500] mx-[3px] border-b-2 ${
+                    className={`p-[10px] font-[500] border-b-2 ${
                       selectedCategory === "All"
                         ? "border-amber-500 text-amber-500"
                         : "border-transparent"
@@ -271,7 +271,7 @@ const Header = () => {
                     All
                   </button>
                   <button
-                    className={`p-[10px] font-[500] mx-[3px] border-b-2 ${
+                    className={`p-[10px] font-[500] border-b-2 ${
                       selectedCategory === "Restaurants"
                         ? "border-amber-500 text-amber-500"
                         : "border-transparent"
@@ -281,7 +281,7 @@ const Header = () => {
                     Restaurants
                   </button>
                   <button
-                    className={`p-[10px] font-[500] mx-[3px] border-b-2 ${
+                    className={`p-[10px] font-[500] border-b-2 ${
                       selectedCategory === "Products"
                         ? "border-amber-500 text-amber-500"
                         : "border-transparent"

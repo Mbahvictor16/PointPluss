@@ -22,8 +22,8 @@ const ImageUploadModal = ({ isOpen, onClose, onUpload }) => {
     <>
       {isOpen && (
         <div className="modal-overlay">
-          <div className="modal-content2">
-            <h2 className="text-xl font-semibold mb-4">Upload Image</h2>
+          <div className="modal-content2 w-[80%] sm:w-auto">
+            <h2 className="text-xl font-[590] mb-4">Upload Image</h2>
             <input type="file" accept="image/*" onChange={handleFileChange} />
             <div className="flex justify-end mt-4">
               <button

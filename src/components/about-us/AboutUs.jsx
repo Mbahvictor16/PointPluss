@@ -1,8 +1,10 @@
+'use client'
+
 import React, { useState } from "react";
 import AboutUSHeader from "./nav-link/AboutUSHeader";
 import ContentSlide from "./content-slider/ContentSlide";
 import { FaArrowDownLong, FaArrowRightLong } from "react-icons/fa6";
-import { burger, deliver, team } from "../../Assets";
+import { burger, deliver, team } from "../../../public/assets/index";
 import Dashboard from "./dashboard/Dashboard";
 
 const AboutUs = () => {

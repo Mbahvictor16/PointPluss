@@ -33,7 +33,7 @@ const Order = () => {
     <div className="order">
       <Headers handleToggleModal={handleToggleModal} />
       <div className="p-[30px]">
-        <div className="w-[100%] flex gap-[40%] mt-[-10px] mb-5 pl-0">
+        <div className="flex justify-between w-[50%] mt-[-10px] mb-5 pl-0">
           <div>
             <Link href={"/"}>
               <FaChevronLeft size={"1.5rem"} />

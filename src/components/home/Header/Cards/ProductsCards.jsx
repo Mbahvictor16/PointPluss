@@ -1,7 +1,6 @@
 import React from "react";
 import { BsFillHeartFill } from "react-icons/bs";
 import AddToCartButton from "../../../../helper/AddToCartButton";
-import { BiFoodMenu } from "react-icons/bi";
 
 const ProductsCards = ({
   filteredProducts,
@@ -13,12 +12,9 @@ const ProductsCards = ({
 
   return (
     <div className="sm:p-[50px] p-[20px] w-full">
-      <div className="flex items-center text-left mt-[5px] gap-[5px] mb-[20px] ">
-        <BiFoodMenu size={"1.5rem"} className="text-amber-500" />
-        <p className="text-[20px] font-[590]">
-          Cuisines matching your search
-        </p>
-      </div>
+      <p className="text-[20px] font-[590] mb-2 text-left">
+        Cuisines matching <span>Item</span>
+      </p>
       <div className="products w-full grid grid-cols-2 xl:grid-cols-4 md:grid-cols-3 lg:grid-cols-4 gap-[10px] p-4">
         {filteredProducts.map((product) => (
           <div
@@ -48,11 +44,10 @@ const ProductsCards = ({
             </div>
             <span
               onClick={() => handleAddFavorite(product)}
-              className={`absolute flex justify-center items-center top-4 right-4 border rounded-[20px] p-1 pt-[6px] cursor-pointer ${
-                favoriteProducts.includes(product.id)
+              className={`absolute flex justify-center items-center top-4 right-4 border rounded-[20px] p-1 pt-[6px] cursor-pointer ${favoriteProducts.includes(product.id)
                   ? "text-red-500 bg-white"
                   : "text-amber-500 bg-gray-200"
-              }`}
+                }`}
             >
               <BsFillHeartFill />
             </span>

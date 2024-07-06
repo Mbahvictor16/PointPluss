@@ -1,7 +1,8 @@
 import React from "react";
+import AboutUs from "@/src/components/about-us/AboutUs";
 
 function AboutUS() {
-  return <div>AboutUS</div>;
+  return <AboutUS/>;
 }
 
 export default AboutUS;

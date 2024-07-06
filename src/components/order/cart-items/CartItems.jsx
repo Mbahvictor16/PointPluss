@@ -56,14 +56,14 @@ const CartItems = () => {
           return (
             <div
               key={product.id}
-              className="bg-white drop-shadow-xl w-full shadow-[0px_4px_10px_#00000026] flex mt-[20px] h-[150px]"
+              className="bg-white drop-shadow-xl w-full shadow-[0px_4px_10px_#00000026] sm:flex mt-[20px] h-auto sm:h-[150px]"
             >
-              <Image src={product.img} alt="product" width={"40%"} />
-              <div className="ml-[30px] justify-start w-full flex flex-col gap-[10px] pt-[10px]">
+              <Image src={product.img} alt="product" className="w-full h-[100px] sm:h-auto" />
+              <div className="sm:ml-[30px] justify-start w-full flex flex-col gap-[10px] pt-[10px]">
                 <p className="font-h-3 w-full font-[number:var(--h-3-font-weight)] text-black text-[length:var(--h-3-font-size)] tracking-[var(--h-3-letter-spacing)] leading-[var(--h-3-line-height)] [font-style:var(--h-3-font-style)]">
                   {product.title}
                 </p>
-                <div className="w-[70%] add-to-cart  flex items-start p-[10px] text-left">
+                <div className="w-[70%] add-to-cart  flex justify-start items-start p-[10px] text-left">
                   <AddToCartButton product={product} />
                 </div>
                 <div className="w-full flex justify-between pr-[20px]">

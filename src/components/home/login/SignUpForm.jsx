@@ -6,7 +6,8 @@ import { IoArrowBack, IoClose } from 'react-icons/io5';
 import { MdOutlineMail } from 'react-icons/md';
 import { IoPersonOutline } from "react-icons/io5";
 import PhoneNumberInput2 from './PhoneNumberInput2';
-import { google } from "../../../../public/assets";
+import LinkedIn from './buttons/LinkedIn';
+import GoogleBtn from './buttons/GoogleBtn';
 
 function SignUpForm({ setFormType, onClose }) {
     const [open, setOpen] = useState(false);
@@ -103,14 +104,8 @@ function SignUpForm({ setFormType, onClose }) {
                     <hr className="w-[50%]" />
                 </div>
             </form>
-            <button className="border px-[15px] py-3 rounded-[20px] border-gray-300">
-                <div className="flex justify-between w-[60%]">
-                    <div className="w-[20px] h-[20px]">
-                        <img src={google} className="w-full object-cover" alt="google" />
-                    </div>
-                    <p className="font-[590]">Google</p>
-                </div>
-            </button>
+            <GoogleBtn/>
+            <LinkedIn/>
             <div className="flex text-base justify-center items-center">
                 <p className="font-medium text-center text-gray-500">By creating an account, you automatically accept our <span className="text-amber-500 underline cursor-pointer">Terms</span>,<span className="text-amber-500 underline cursor-pointer"> Privacy Policy</span>, and <span className="text-amber-500 underline cursor-pointer">Cookies Policy</span></p>
             </div>
