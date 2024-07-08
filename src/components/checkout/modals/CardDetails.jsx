@@ -125,7 +125,7 @@ const CardDetails = ({ isOpen, onClose }) => {
               </p>
               <div
                 onClick={handleCheckout}
-                className="flex text-black justify-center py-3 w-[50%] cursor-pointer items-center bg-amber-500 px-2 drop-shadow-xl shadow-[0px_4px_10px_#00000026] font-h-3 font-[number:var(--h-3-font-weight)] text-[length:var(--h-3-font-size)] tracking-[var(--h-3-letter-spacing)] leading-[var(--h-3-line-height)] [font-style:var(--h-3-font-style)]"
+                className="flex text-black hover:bg-[#ecb858ec] duration-300 rounded-md justify-center py-3 w-[50%] cursor-pointer items-center bg-amber-500 px-2 drop-shadow-xl shadow-[0px_4px_10px_#00000026] font-h-3 font-[number:var(--h-3-font-weight)] text-[length:var(--h-3-font-size)] tracking-[var(--h-3-letter-spacing)] leading-[var(--h-3-line-height)] [font-style:var(--h-3-font-style)]"
               >
                 Checkout
               </div>

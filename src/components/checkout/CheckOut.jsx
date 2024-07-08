@@ -2,19 +2,21 @@
 
 import React, { useState } from "react";
 import { FaChevronLeft } from "react-icons/fa";
-import { Link } from "next/link";
+import Link from "next/link"; // Corrected import
 import { BsToggleOn } from "react-icons/bs";
 import { FaCircle } from "react-icons/fa";
 import Headers from "../../helper/Headers";
 import CardDetails from "./modals/CardDetails";
 import VisaDetails from "./modals/VisaDetails";
-import { masterCard, opay, visa } from "../../../public/assets";
+import { masterCard, Money, opay, visa } from "../../../public/assets";
 import Dashboard from "../home/dashboard/Dashboard";
+import CashModal from "./modals/CashModal";
 
 const CheckOut = () => {
   const [selectedMethod, setSelectedMethod] = useState(null);
   const [isCardModalOpen, setIsCardModalOpen] = useState(false);
   const [isVisaModalOpen, setIsVisaModalOpen] = useState(false);
+  const [isCashModalOpen, setIsCashModalOpen] = useState(false);
   const [isDashboardModalOpen, setIsDashboardModalOpen] = useState(false);
 
   const handlePaymentMethodClick = (method) => {
@@ -27,6 +29,8 @@ const CheckOut = () => {
       setIsCardModalOpen(true);
     } else if (selectedMethod === "visa") {
       setIsVisaModalOpen(true);
+    } else if (selectedMethod === "cash") {
+      setIsCashModalOpen(true);
     } else {
       // Proceed with checkout if no payment method selected
       console.log("Proceeding with checkout...");
@@ -44,10 +48,10 @@ const CheckOut = () => {
   return (
     <div className="w-full min-h-screen">
       <Headers handleToggleModal={handleToggleModal} />
-      <div className=" p-[30px]">
+      <div className="p-[30px]">
         <div className="w-[50%] lg:px-[30px] checkout-icon flex justify-between mt-[-10px] mb-5">
           <div className="flex justify-center items-center">
-            <Link href={"/orders"}>
+            <Link href="/orders">
               <FaChevronLeft size={"1.5rem"} />
             </Link>
           </div>
@@ -66,7 +70,11 @@ const CheckOut = () => {
           isOpen={selectedMethod === "visa" && isVisaModalOpen}
           onClose={() => setIsVisaModalOpen(false)}
         />
-        <form className=" lg:px-[30px] flex flex-col w-full gap-5">
+        <CashModal
+          isOpen={selectedMethod === "cash" && isCashModalOpen}
+          onClose={() => setIsCashModalOpen(false)}
+        />
+        <form className="lg:px-[30px] flex flex-col w-full gap-5">
           <div className="flex w-full checkout_flex">
             <div className="delivery_details w-[50%] h-auto">
               <p className="text-left mt-[40px] font-[590] text-[20px]">
@@ -116,7 +124,7 @@ const CheckOut = () => {
                   />
                 </div>
 
-                <div className="flex text-left row mt-[20px]  flex-col w-[100%]">
+                <div className="flex text-left row mt-[20px] flex-col w-[100%]">
                   <p className="font-medium">Email Address</p>
                   <input
                     type="text"
@@ -128,7 +136,7 @@ const CheckOut = () => {
             </div>
             <div className="payment_details flex justify-center items-center p-5 w-[50%] max-h-full">
               <div className="bg-gray-100 sticky rounded-[10px] p-6 drop-shadow-xl shadow-[0px_4px_10px_#00000026]">
-                <p className="text-left lg:font-[590] font-medium  text-[20px]">
+                <p className="text-left lg:font-[590] font-medium text-[20px]">
                   Payment Methods
                 </p>
                 <div
@@ -177,18 +185,18 @@ const CheckOut = () => {
                   </div>
                 </div>
                 <div
-                  className={`flex rounded-[10px] p-3 mt-4 border-white h-auto bg-white drop-shadow-xl shadow-[0px_4px_10px_#00000026]`}
-                  onClick={() => handlePaymentMethodClick("opay")}
+                  className={`flex cursor-pointer rounded-[10px] p-3 mt-4 border-white h-auto bg-white drop-shadow-xl shadow-[0px_4px_10px_#00000026]`}
+                  onClick={() => handlePaymentMethodClick("cash")}
                 >
                   <div className="flex text-left justify-between items-center w-full">
-                    <div className="flex gap-7 items-center">
-                      <img src={opay} className="w-[20%]" alt="opay" />
-                      <p className="font-[590] text-lg">Opay</p>
+                    <div className="flex  gap-3 lg:gap-7 items-center">
+                      <img src={Money} className="w-[20%]" alt="cash" />
+                      <p className="font-[590] text-lg">Pay on delivery</p>
                     </div>
                     <div className="mr-1 rounded-[10px] text-gray-200">
                       <FaCircle
                         className={
-                          selectedMethod === "opay"
+                          selectedMethod === "cash"
                             ? "text-amber-500"
                             : "text-gray-200"
                         }
@@ -208,7 +216,7 @@ const CheckOut = () => {
             </div>
             <div
               onClick={handleCheckOutClick}
-              className="bg-amber-500 flex justify-center w-[40%] items-center p-[10px] px-[10%] mt-[20px] font-[590] cursor-pointer drop-shadow-xl shadow-[0px_4px_10px_#00000026]"
+              className="bg-amber-500 hover:bg-[#ecb858ec] duration-300 flex rounded-md justify-center w-[40%] items-center p-[10px] px-[10%] mt-[20px] font-[590] cursor-pointer drop-shadow-xl shadow-[0px_4px_10px_#00000026]"
             >
               <p>Checkout</p>
             </div>

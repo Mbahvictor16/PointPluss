@@ -20,9 +20,9 @@ const AddToCartButton = ({ product }) => {
   };
 
   return (
-    <div className="flex items-center justify-center font-h-3 w-full font-[number:var(--h-3-font-weight)] text-black text-[length:var(--h-3-font-size)] tracking-[var(--h-3-letter-spacing)] leading-[var(--h-3-line-height)] [font-style:var(--h-3-font-style)]">
+    <div className="flex font-h-3 w-full font-[number:var(--h-3-font-weight)] text-black text-[length:var(--h-3-font-size)] tracking-[var(--h-3-letter-spacing)] leading-[var(--h-3-line-height)] [font-style:var(--h-3-font-style)]">
       <div
-        className="btn1 bg-[#ffa5004c] cursor-pointer border duration-300 active:bg-amber-600 border-black text-black px-2 py-1"
+        className="btn1 bg-[#ffa5004c] rounded-s-md cursor-pointer border duration-300 active:bg-amber-600 border-black text-black px-2 py-1"
         onClick={decreaseQuantity}
       >
         -
@@ -32,7 +32,7 @@ const AddToCartButton = ({ product }) => {
       </div>
 
       <div
-        className="btn1 bg-[#ffa5004c] cursor-pointer border duration-300 active:bg-amber-600 border-black text-black px-2 py-1"
+        className="btn1 bg-[#ffa5004c] cursor-pointer rounded-e-md border duration-300 active:bg-amber-600 border-black text-black px-2 py-1"
         onClick={increaseQuantity}
       >
         +

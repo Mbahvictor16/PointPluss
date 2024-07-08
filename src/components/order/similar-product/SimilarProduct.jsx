@@ -18,7 +18,7 @@ const SimilarProduct = () => {
   }, []);
 
   return (
-    <div className="mt-[-20px] m-[30px]">
+    <div className="mt-[-20px] ">
       <motion.div
         ref={carousel}
         whileTap={{ cursor: "grabbing" }}
@@ -48,7 +48,7 @@ const SimilarProduct = () => {
                 <div>
                   <AddToCartButton product={products} />
                 </div>
-                <div className="flex justify-center items-center bg-amber-500 px-2 drop-shadow-xl bg-[#ffa5004c] shadow-[0px_4px_10px_#00000026] font-h-3 font-[number:var(--h-3-font-weight)] text-black text-[length:var(--h-3-font-size)] tracking-[var(--h-3-letter-spacing)] leading-[var(--h-3-line-height)] [font-style:var(--h-3-font-style)]">
+                <div className="flex justify-center rounded-md items-center bg-amber-500 px-2 drop-shadow-xl hover:bg-[#ecb858ec] duration-300 shadow-[0px_4px_10px_#00000026] font-h-3 font-[number:var(--h-3-font-weight)] text-black text-[length:var(--h-3-font-size)] tracking-[var(--h-3-letter-spacing)] leading-[var(--h-3-line-height)] [font-style:var(--h-3-font-style)]">
                   Add to Cart
                 </div>
               </div>
