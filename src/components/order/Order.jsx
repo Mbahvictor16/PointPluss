@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { FaChevronLeft } from "react-icons/fa";
 import CartItems from "./cart-items/CartItems";
-import { redirect } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 import Link from "next/link";
 import SimilarProduct from "./similar-product/SimilarProduct";
 import { FaArrowLeftLong } from "react-icons/fa6";
@@ -11,14 +11,15 @@ import Headers from "../../helper/Headers";
 import Dashboard from "../home/dashboard/Dashboard";
 
 const Order = () => {
+  const router = useRouter();
   const [isDashboardModalOpen, setIsDashboardModalOpen] = useState(false);
 
   const handleHome = () => {
-    redirect("/");
+    router.push("/");
   };
 
   const handleCheckout = () => {
-    redirect("/checkout");
+    router.push("/checkout");
   };
 
   const handleToggleModal = () => {
