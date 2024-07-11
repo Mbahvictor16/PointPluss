@@ -103,20 +103,26 @@ const Headers = ({ handleToggleModal }) => {
               {open && (
                 <div
                   ref={menuRef}
-                  className="bg-white rounded-lg absolute top-[60px] p-[10px] w-[100px] shadow-lg"
+                  className="dashboard dropdown-img hidden lg:block rounded-lg absolute top-[60px] p-[10px] w-[150px] drop-shadow-xl shadow-[0px_4px_10px_#00000026]"
                 >
                   <ul>
                     <li
                       onClick={() => setOpen(false)}
-                      className="p-1 px-2 hover:bg-amber-500 font-[590] text-black hover:text-white rounded cursor-pointer"
+                      className="p-1 px-2 hover:bg-[#ffa5004c] flex items-center gap-[10px] font-[590] text-black hover:text-white rounded cursor-pointer"
                     >
-                      <Link href={"/person"}>Profile</Link>
+                      <MdOutlinePerson size={"1.2rem"} />
+                      <Link href={"/person"}>
+                        Profile
+                      </Link>
                     </li>
                     <li
                       onClick={() => setOpen(false)}
-                      className="p-1 px-2 hover:bg-amber-500 text-black hover:text-white font-[590] rounded cursor-pointer"
+                      className="p-1 px-2 hover:bg-[#ffa5004c] flex items-center gap-[10px] text-black hover:text-white font-[590] rounded cursor-pointer"
                     >
-                      <Link href={"/"}>Logout</Link>
+                      <TbLogout2 size={"1.2rem"} />
+                      <Link href={"/"}>
+                        Logout
+                      </Link>
                     </li>
                   </ul>
                 </div>
