@@ -259,33 +259,30 @@ const Header = () => {
           <>
             {filteredRestaurants.length > 0 || filteredProducts.length > 0 ? (
               <div className="search-results flex flex-col gap-5 p-4">
-                  <div className="category-selector sm:px-[50px] px-[20px] text-lg flex justify-start items-center gap-1">
+                <div className="category-selector sm:px-[50px] px-[20px] text-lg flex justify-start items-center gap-1">
                   <button
-                    className={`p-[10px] font-[500] border-b-2 ${
-                      selectedCategory === "All"
-                        ? "border-amber-500 text-amber-500"
-                        : "border-transparent"
-                    }`}
+                    className={`p-[10px] font-[500] border-b-2 ${selectedCategory === "All"
+                      ? "border-amber-500 text-amber-500"
+                      : "border-transparent"
+                      }`}
                     onClick={() => setSelectedCategory("All")}
                   >
                     All
                   </button>
                   <button
-                    className={`p-[10px] font-[500] border-b-2 ${
-                      selectedCategory === "Restaurants"
-                        ? "border-amber-500 text-amber-500"
-                        : "border-transparent"
-                    }`}
+                    className={`p-[10px] font-[500] border-b-2 ${selectedCategory === "Restaurants"
+                      ? "border-amber-500 text-amber-500"
+                      : "border-transparent"
+                      }`}
                     onClick={() => setSelectedCategory("Restaurants")}
                   >
                     Restaurants
                   </button>
                   <button
-                    className={`p-[10px] font-[500] border-b-2 ${
-                      selectedCategory === "Products"
-                        ? "border-amber-500 text-amber-500"
-                        : "border-transparent"
-                    }`}
+                    className={`p-[10px] font-[500] border-b-2 ${selectedCategory === "Products"
+                      ? "border-amber-500 text-amber-500"
+                      : "border-transparent"
+                      }`}
                     onClick={() => setSelectedCategory("Products")}
                   >
                     Products
@@ -299,7 +296,7 @@ const Header = () => {
                   <div className="lg:px-[50px] w-[100%] px-[20px] mb-[20px]">
                     <Slider {...settings}>
                       {Icons.map((icon) => (
-                        <div className="flex flex-col gap-[10px] items-center justify-center">
+                        <div className="flex flex-col gap-[10px] items-center justify-center" key={icon}>
                           <div className="flex justify-center items-center">
                             <picture>
                               <source
@@ -339,7 +336,7 @@ const Header = () => {
                       className="inner-carousel"
                     >
                       {products.map((product) => (
-                        <motion.div className="boxes m-[5px] h-auto min-w-[230px] rounded-[15px] mb-[20px] drop-shadow-xl bg-[#ffa5004c] shadow-[0px_4px_10px_#00000026]">
+                        <motion.div className="boxes m-[5px] h-auto min-w-[230px] rounded-[15px] mb-[20px] drop-shadow-xl bg-[#ffa5004c] shadow-[0px_4px_10px_#00000026]" key={product}>
                           <Image
                             src={product.img}
                             alt={product.title}
@@ -363,11 +360,10 @@ const Header = () => {
                           </div>
                           <span
                             onClick={() => handleAddFavorite(product)}
-                            className={`absolute flex justify-center items-center top-4 right-4 border rounded-[20px] p-1 pt-[6px] cursor-pointer ${
-                              favoriteProducts.includes(product.id)
-                                ? "text-red-500 bg-white"
-                                : "text-amber-500 bg-gray-200"
-                            }`}
+                            className={`absolute flex justify-center items-center top-4 right-4 border rounded-[20px] p-1 pt-[6px] cursor-pointer ${favoriteProducts.includes(product.id)
+                              ? "text-red-500 bg-white"
+                              : "text-amber-500 bg-gray-200"
+                              }`}
                           >
                             <BsFillHeartFill />
                           </span>

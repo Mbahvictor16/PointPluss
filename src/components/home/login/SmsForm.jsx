@@ -7,10 +7,10 @@ import GoogleBtn from "./buttons/GoogleBtn";
 
 function SmsForm({ onClose, setFormType }) {
   return (
-    <div className="flex rounded-[10px] flex-col gap-[20px] border p-[30px]">
+    <div className="flex rounded-[10px] flex-col gap-[20px] border p-[30px] overflow-auto">
       <div className="flex gap-[20px] justify-center items-center flex-col">
         <h1 className="text-black lg:text-4xl text-2xl lg:font-[590] font-[590] tracking-[2px]">Welcome</h1>
-        <p className="font-medium text-gray-500">Let's start off with your phone number.</p>
+        <p className="font-medium text-gray-500">Let&apos;s start off with your phone number.</p>
       </div>
       <PhoneNumberInput />
       <div className='flex mt-[20px] gap-4 justify-center items-center'>
@@ -18,15 +18,15 @@ function SmsForm({ onClose, setFormType }) {
         <button className="bg-amber-500 py-[6px] w-full rounded-[20px] text-white font-[590]">WhatsApp</button>
       </div>
       <div className="flex text-base justify-center items-center">
-        <p className="font-medium text-gray-500">Don't have an account yet? <span onClick={() => setFormType("signup")} className="text-amber-500 cursor-pointer">SignUp</span></p>
+        <p className="font-medium text-gray-500">Don&apos;t have an account yet? <span onClick={() => setFormType("signup")} className="text-amber-500 cursor-pointer">SignUp</span></p>
       </div>
       <div className="flex w-full gap-2 justify-center items-center">
         <hr className="w-[50%]" />
         <p>or</p>
         <hr className="w-[50%]" />
       </div>
-      <GoogleBtn/>
-      <LinkedIn/>
+      <GoogleBtn />
+      <LinkedIn />
       <button className="border px-[15px] py-2 rounded-[20px] mb-9 border-gray-300" onClick={() => setFormType("mail")}>
         <div className="flex justify-between w-[60%]">
           <div className="text-amber-500 flex justify-center items-center">
