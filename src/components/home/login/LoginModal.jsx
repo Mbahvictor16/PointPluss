@@ -13,6 +13,7 @@ const LoginModal = ({ isOpen, onClose }) => {
     <div>
       {isOpen && (
         <div className="fixed top-0 left-0 w-full  min-h-[100dvh] z-[50] flex justify-center items-center overflow-auto bg-black/80">
+
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

@@ -14,7 +14,6 @@ export default function Home ({ children }) {
           <div className='Routes w-[100%]'>
             <HomePage />
             {children}
-            <Footer />
           </div>
         </div>
       </div>

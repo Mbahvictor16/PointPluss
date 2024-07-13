@@ -59,7 +59,7 @@ const Footer = () => {
             </p>
             <div className="font-[400] flex flex-col gap-[20px] text-lg">
               <Link href="/aboutus">
-                <p onClick={() => window.scrollTo(0, 0)} className="overflow-hidden cursor-pointer transform transition-transform duration-300 hover:scale-105">
+                <p className="overflow-hidden cursor-pointer transform transition-transform duration-300 hover:scale-105">
                   About Us
                 </p>
               </Link>
@@ -99,15 +99,15 @@ const Footer = () => {
           2024 &copy; CopyRight PointPlus
         </div>
         <div className="flex gap-4 items-center">
-          <p className=" transform transition-transform cursor-pointer duration-300 hover:scale-105">
+          <Link href="/terms-of-use" className=" transform transition-transform cursor-pointer duration-300 hover:scale-105">
             TERMS & CONDITION
-          </p>
-          <p className=" transform transition-transform cursor-pointer duration-300 hover:scale-105">
+          </Link>
+          <Link href="/privacy" className=" transform transition-transform cursor-pointer duration-300 hover:scale-105">
             PRIVACY POLICY
-          </p>
-          <p className=" transform transition-transform cursor-pointer duration-300 hover:scale-105">
+          </Link>
+          <Link href="/cookie-policy" className=" transform transition-transform cursor-pointer duration-300 hover:scale-105">
             COOKIE POLICY
-          </p>
+          </Link>
           <p className=" transform transition-transform cursor-pointer duration-300 hover:scale-105">
             COMPLIANCE
           </p>

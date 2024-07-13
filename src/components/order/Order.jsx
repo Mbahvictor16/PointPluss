@@ -29,7 +29,7 @@ const Order = () => {
   return (
     <div className="order">
       <Headers handleToggleModal={handleToggleModal} />
-      <div className="p-[30px]">
+      <div className="p-[30px] lg:px-[50px] px-[20px]">
         <div className="flex justify-between w-[50%] mt-[-10px] mb-5 pl-0">
           <div>
             <Link href={"/"}>
@@ -42,7 +42,7 @@ const Order = () => {
             </p>
           </div>
         </div>
-        <div className="Cart lg:px-[50px] px-[20px] flex flex-col gap-[30px] justify-between w-full lg:flex-row xl:flex-row mb-[50px]">
+        <div className="Cart flex flex-col gap-[30px] justify-between w-full lg:flex-row xl:flex-row mb-[50px]">
           <div className="w-[100%] h-[400px] no-scrollbar overflow-hidden overflow-y-auto xl:w-[70%]">
             <CartItems />
           </div>
@@ -93,7 +93,7 @@ const Order = () => {
           </div>
         </div>
 
-        <div className="my-6 lg:px-[50px] px-[20px]">
+        <div className="my-6">
           <p className="mb-[30px] font-[number:var(--h-3-font-weight)] text-[20px] lg:text-[24px] text-left text-black tracking-[var(--h-3-letter-spacing)] leading-[var(--h-3-line-height)] [font-style:var(--h-3-font-style)]">
             Similar Foods
           </p>
